@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Unzip project
-        run: unzip -q mitvv5.zip
+        run: unzip -q mitvv6.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -17,9 +17,9 @@ jobs:
         with:
           gradle-version: '8.7'
       - name: Build APK
-        working-directory: mitvv5
+        working-directory: mitvv6
         run: gradle assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
         with:
-          name: mitvv5-APK
-          path: mitvv5/app/build/outputs/apk/debug/app-debug.apk
+          name: mitvv6-APK
+          path: mitvv6/app/build/outputs/apk/debug/app-debug.apk
